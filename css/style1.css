@@ -1,0 +1,121 @@
+.logo {
+    height: 50px;
+}
+
+.carousel-item img {
+    height: 400px;
+}
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    /* Dark background color */
+    color: #fff;
+    /* Text color */
+    background-color: azure;
+
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    /* Darker navigation bar */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* Ensure navigation bar is on top of other content */
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust height as needed */
+    width: auto;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.burger {
+    display: none;
+    /* Hide burger menu by default on larger screens */
+}
+
+.content {
+    margin-top: 80px;
+    /* Ensure content starts below the fixed navigation bar */
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        /* Hide regular links on smaller screens */
+        position: absolute;
+        top: 60px;
+        /* Adjust to match navbar height */
+        right: 20px;
+        background-color: #333;
+        /* Darker background for dropdown */
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Optional: Add shadow */
+        flex-direction: column;
+        align-items: flex-end;
+        width: 150px;
+        /* Adjust width as needed */
+        z-index: 999;
+        /* Ensure dropdown is above content */
+    }
+
+    .navbar-links a {
+        margin: 10px;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: transform 0.4s ease;
+    }
+
+    .burger.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
